@@ -65,18 +65,25 @@ body
 {
         text-align: right;
     width: 400px;   
-
     display: inline-block;
 }
-.form-control.username-tb
+.input-group input
 {
     margin: 5px;
     
 }
-.form-control.password-tb
+#required
 {
-    margin: 5px;
     
+    float: left;
+    color: red;
+    margin-top:7px;
+    margin-left:4px;
+}
+.author
+{
+    font-size: 13px;
+    color: antiquewhite;
 }
 #loginbtn 
 {
@@ -85,6 +92,11 @@ body
     border-left: 0px;
     border-right: 0px;
     color: aliceblue;
+}
+#loginbtn:hover
+{
+    
+ color:dimgray;
 }
 #registerbtn 
 {
@@ -96,10 +108,32 @@ body
         color: aliceblue;
 
 }
+.text
+{
+    font-size: 18px;
+}
+#registerbtn:hover
+{
+ color:dimgray;   
+}
 #login-btn, #register-btn
 {
     margin-top: 5px;
     margin-right: -6px;
+}
+#browsebtn
+{
+ margin-top:80px;   
+ font-size: 30px;
+}
+#browsebtn:hover
+{
+-webkit-box-shadow: inset -6px -7px 62px -15px rgba(0,0,0,0.75);
+-moz-box-shadow: inset -6px -7px 62px -15px rgba(0,0,0,0.75);
+box-shadow: inset -6px -7px 62px -15px rgba(0,0,0,0.75);
+
+
+
 }
 #social-login
 {
@@ -123,10 +157,39 @@ body
     -o-background-size: cover;
     background-size: cover;
 }
+#page-bottom
+{
+ min-height:435px;
+ width: 100%;
+    
+    
+}
+#icon
+{
+    
+ font-size: 50px;  
+   background: rgb(255, 211, 189);
+    padding: 45px;
+    border-radius: 100%;
+    text-align:center;
+    color:white;
+    
+}
+.row
+{
+    display: block;
+    	text-align:center;
+
+    
+}
+#icon-column
+{
+    padding: 105px;
+}
 #carousel-example-generic
 {
     
- margin-top:170px;   
+ margin-top:100px;   
  padding-left: 10%;
     padding-right: 10%;
     
