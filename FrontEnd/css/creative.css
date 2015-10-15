@@ -1,10 +1,5 @@
 
-.collapse.navbar-collapse
-{
-    
-    padding-bottom: 60px;
-    
-}
+
 
 .nav.navbar-nav.navbar-right
 {
@@ -14,7 +9,6 @@
 }
 
 .title h1
-
 {
     
     
@@ -22,6 +16,10 @@
 .title h3
 {
     color: beige
+}
+#search-grp
+{
+
 }
 body
 {
@@ -51,9 +49,19 @@ body
 {
     background-color: transparent;
 }
+#side-bar
+{
+    border-right: 1px;
+    border-right-color: lightgray;
+    border-right-style: solid;
+}
 #grammi
 {
     margin-top: -1px;
+}
+#search-row
+{
+    margin-top: 5%
 }
 .modal-content
 {
@@ -61,17 +69,7 @@ body
     margin-top: 250px;
     padding: 40px;
 }
-.input-group
-{
-        text-align: right;
-    width: 400px;   
-    display: inline-block;
-}
-.input-group input
-{
-    margin: 5px;
-    
-}
+
 #required
 {
     
@@ -92,6 +90,19 @@ body
     border-left: 0px;
     border-right: 0px;
     color: aliceblue;
+}
+#navbar-browse
+{
+    
+    
+    padding-right:10%;  
+    padding-left: 10%;
+    padding-top: 2%;
+    
+}
+.navbar-brand
+{
+    font-size: 30px;
 }
 #loginbtn:hover
 {
