@@ -16,15 +16,17 @@ mongo.connect(mongoCredentials, function(err, dbc){
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/api/login', function(req, res){
+//epikoinwnia me to '/api/register'
+
+app.post('/api/register', function(req, res){
 	
 	var users = db.collection('users');
-	
+		
 	users.insert({
 		
 		username: req.body.username,
 		password: req.body.password,
-		mail: req.body.mail,
+		mail: req.body.email,
 		name: req.body.name,
 		surname: req.body.surname
 		
@@ -40,8 +42,28 @@ app.post('/api/login', function(req, res){
 	
 });
 
+
+//epikoinwnia me to '/api/login'
+
+app.post('/api/login', function(req, res) {
+	
+	var users = db.collection('users');
+	
+	users.find({ username: "kosmas" }).toArray(function(err, data){
+		
+		if( data ){
+			
+			res.send(JSON.stringify(data));
+			
+		}
+	
+	});
+
+});
+
+
 app.get('*', express.static('./www/'));
 
 var server = http.createServer(app);
 
-server.listen(8080, '127.0.0.1'); 
+server.listen(8080, '127.0.0.1');
