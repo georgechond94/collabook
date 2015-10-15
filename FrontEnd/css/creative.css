@@ -63,11 +63,17 @@ body
 {
     margin-top: 5%
 }
+#register-modal-content
+{
+    
+ padding-bottom:15px;   
+}
 .modal-content
 {
-
+    opacity: 0.9;
     margin-top: 250px;
     padding: 40px;
+    padding-bottom: 0px;
 }
 
 #required
@@ -126,6 +132,11 @@ body
 #registerbtn:hover
 {
  color:dimgray;   
+}
+label
+{
+    float:left;
+ color:dimgrey;
 }
 #login-btn, #register-btn
 {

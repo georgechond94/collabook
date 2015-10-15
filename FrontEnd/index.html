@@ -119,24 +119,49 @@
     
     <div id="register-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-rg">
-    <div class="modal-content">
+    <div id="register-modal-content" class="modal-content">
         <form id="register-form" data-toggle="validator" role="form">
-        
-        
-        
-        
-       
-        
-              <div class="input-group">
-  <input type="text" id="usernameregister" class="form-control" placeholder="*Username" required aria-describedby="basic-addon1">
-  <input type="text" id="passwordregister" class="form-control" placeholder="*Password" required aria-describedby="basic-addon1">
-                 
-    <input type="text" id="emailregister" class="form-control" placeholder="*Email" required aria-describedby="basic-addon1">
-                  
-               <input type="text" id="nameregister" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
-    <input type="text"  id="surnameregister" class="form-control" placeholder="Surname" aria-describedby="basic-addon1">
+      
+          <div class="form-group has-feedback">
+              
+              <label for="usernamelogin" class="control-label">Username</label>
+
+  <input type="text" id="usernameregister" class="form-control" data-minlength="4" data-maxlength="20" placeholder="Required" required aria-describedby="basic-addon1">
+                <span class="glyphicon form-control-feedback" aria-hidden="false"></span>
+
+  </div>
+            
+            <div class="form-group has-feedback">
+                <label for="passwordregister" class="control-label">Password</label>
+  <input type="password" data-minlength="6" data-maxlength="20" id="passwordregister" class="form-control" placeholder="Required" required aria-describedby="basic-addon1">
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
     
-                
+            </div>
+            
+            <div class="form-group has-feedback">
+                <label for="confpasswordregister" class="control-label">Confirm Password</label>
+            
+                   <input type="password" data-match="#passwordregister" data-minlength="6" data-maxlength="20" id="confpasswordregister" class="form-control" placeholder="Required" required aria-describedby="basic-addon1">
+
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+             <div class="form-group has-feedback">
+                 <label for="emailregister" class="control-label">Email</label>
+    <input type="email" id="emailregister" required class="form-control" placeholder="Required" required aria-describedby="basic-addon1">
+             <span class="glyphicon form-control-feedback" aria-hidden="true"></span>     
+            </div>
+            
+             <div class="form-group has-feedback">
+                 <label for="nameregister" class="control-label">Name</label>
+               <input type="text" id="nameregister" class="form-control" placeholder="Optional" aria-describedby="basic-addon1">
+                 <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
+            
+            <div class="form-group has-feedback">
+                <label for="surnameregister" class="control-label">Surname</label>
+    <input type="text"  id="surnameregister" class="form-control" placeholder="Optional" aria-describedby="basic-addon1">
+          <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+            </div>
                   
    
      <button id="register-btn" type="submit" class="btn btn-default btn-lg">
@@ -144,10 +169,9 @@
 </button>     
       
         
-        <p id="required">* Required</p>
+     
   
         
-    </div>
     </form>
     </div>
     </div>
@@ -158,21 +182,26 @@
    <form id="login-form" data-toggle="validator" role="form">
        
 
-        <div class="input-group">
-    <div class="form-group has-feedback">
+    <div class="form-group has-feedback" >
+        
+  <label for="usernamelogin" class="control-label">Username</label>
+  <input type="text" id="usernamelogin"  data-minlength="4" data-maxlength="20" required class="form-control username-tb" placeholder="Required" aria-describedby="basic-addon1">
+                  <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
 
-  <input type="text" id="usernamelogin"  required class="form-control username-tb" placeholder="Username" aria-describedby="basic-addon1">
     </div>
-  <div class="form-group">
-  <input id="passwordlogin" type="password"   required class="form-control password-tb" placeholder="Password" aria-describedby="basic-addon1">
+  <div class="form-group has-feedback">
+      <label for="passwordlogin" class="control-label">Password</label>
+  <input id="passwordlogin" type="password"  data-minlength="6" data-maxlength="20"  required class="form-control password-tb" placeholder="Required" aria-describedby="basic-addon1">
+                <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+
    </div>
   <div class="form-group">
+      
 
      <button id="login-btn" type="submit" class="btn btn-default btn-lg">
   <span class="glyphicon glyphicon-check" aria-hidden="true"></span>Login
 </button>  
             </div>
- </div>
 </form>
 
         <div id="social-login">
@@ -277,13 +306,13 @@
   } else {
       e.preventDefault();
     // everything looks good!
-      $.post('../BackEnd/api/login',{
+      $.post('/api/login',{
 		username:$("#usernamelogin").val(),
 		password: $("#passwordlogin").val()
 	}).success(function(response){
     
         
-		      alert("epitelous");
+                		      alert("logged in!");
 
 		
 	});
@@ -294,7 +323,7 @@
     
     $("#register-form").on('submit',function(e){ 
         
-        if(e.isDefaultPrevented)){
+        if(e.isDefaultPrevented()){
             
             
             
@@ -303,7 +332,7 @@
         else{
             e.preventDefault();
             
-            $.post('../BackEnd/api/register',{
+            $.post('/api/register',{
                 
                 username:$("#usernameregister").val(),
                 password:$("#passwordregister").val(),
@@ -314,12 +343,19 @@
                 
                 
                 
+            }).success(function(response){
+                
+                		      alert("registered!");
+
             });
         
         
+    }
     });
-        
+            
         });
+        
+       
         
         
     </script>
