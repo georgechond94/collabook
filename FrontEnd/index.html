@@ -120,15 +120,21 @@
     <div id="register-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-rg">
     <div class="modal-content">
+        <form id="register-form" data-toggle="validator" role="form">
+        
+        
+        
+        
+       
         
               <div class="input-group">
-  <input type="text"  class="form-control" placeholder="*Username" required aria-describedby="basic-addon1">
-  <input type="text" class="form-control" placeholder="*Password" required aria-describedby="basic-addon1">
+  <input type="text" id="usernameregister" class="form-control" placeholder="*Username" required aria-describedby="basic-addon1">
+  <input type="text" id="passwordregister" class="form-control" placeholder="*Password" required aria-describedby="basic-addon1">
                  
-    <input type="text" class="form-control" placeholder="*Email" required aria-describedby="basic-addon1">
+    <input type="text" id="emailregister" class="form-control" placeholder="*Email" required aria-describedby="basic-addon1">
                   
-               <input type="text" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
-    <input type="text" class="form-control" placeholder="Surname" aria-describedby="basic-addon1">
+               <input type="text" id="nameregister" class="form-control" placeholder="Name" aria-describedby="basic-addon1">
+    <input type="text"  id="surnameregister" class="form-control" placeholder="Surname" aria-describedby="basic-addon1">
     
                 
                   
@@ -142,9 +148,10 @@
   
         
     </div>
-  </div>
-</div>
-        </div>
+    </form>
+    </div>
+    </div>
+    </div>
     <div id="login-modal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-rg">
     <div class="modal-content">
@@ -284,6 +291,33 @@
   }
         
         });
+    
+    $("#register-form").on('submit',function(e){ 
+        
+        if(e.isDefaultPrevented)){
+            
+            
+            
+        }
+        
+        else{
+            e.preventDefault();
+            
+            $.post('../BackEnd/api/register',{
+                
+                username:$("#usernameregister").val(),
+                password:$("#passwordregister").val(),
+                email:$("#emailregister").val(),
+                name:$("#nameregister").val(),
+                surname:$("#surnameregister").val()
+                
+                
+                
+                
+            });
+        
+        
+    });
         
         });
         
