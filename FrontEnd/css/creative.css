@@ -49,12 +49,7 @@ body
 {
     background-color: transparent;
 }
-#side-bar
-{
-    border-right: 1px;
-    border-right-color: lightgray;
-    border-right-style: solid;
-}
+
 #grammi
 {
     margin-top: -1px;
@@ -124,6 +119,19 @@ body
     border-right: 0px;
         color: aliceblue;
 
+}
+
+#sidebar-wrapper
+{
+    background-color: white;
+        border-right: 1px;
+    border-right-color: lightgray;
+    border-right-style: solid;
+    
+}
+#side-bar
+{
+    width: 100%;
 }
 .text
 {

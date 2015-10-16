@@ -21,6 +21,7 @@
 
     <!-- Plugin CSS -->
     <link rel="stylesheet" href="css/animate.min.css" type="text/css">
+    <link href="css/simple-sidebar.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/creative.css" type="text/css">
@@ -74,11 +75,10 @@
     <hr>
     
     
-    
-  
-    
-    <div id="search-row" class="row">
-        <div class="col-md-1"></div>
+        <div id="wrapper">
+  <div id="sidebar-wrapper">
+
+  <div id="search-row" class="row">
   <div id="side-bar" class="col-md-2">
       <div id="search-div" class="container-fluid">
         
@@ -100,29 +100,29 @@
             </td>
             </tr>
             </thead>
-            <tr>
+          <tr>
             <td>
                 <div class="radio">
               <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Finished
-              </label>
-            </div>
-            </td>
-            </tr>
-            <tr>
-            <td>
-                <div class="radio">
-              <label>
-                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                <input type="checkbox" id="optionsRadios2" >
                 In progress
               </label>
             </div>
             </td>
           </tr>
+            <tr>
+            <td>
+                <div class="radio">
+              <label>
+                <input type="checkbox" id="optionsRadios1">
+                Finished
+              </label>
+            </div>
+            </td>
+            </tr>
+            
           </table>
       
-      <br>
       
       <table class="table table-hover">
         <thead>
@@ -135,7 +135,7 @@
             <td>
                 <div class="radio">
               <label>
-                <input type="radio" name="optionsRadios2" id="optionsRadios3" value="option1" checked>
+                <input type="checkbox" id="optionsRadios3">
                 Greek
               </label>
             </div>
@@ -145,8 +145,37 @@
             <td>
                 <div class="radio">
               <label>
-                <input type="radio" name="optionsRadios2" id="optionsRadios4" value="option2">
+                <input type="checkbox" id="optionsRadios4" >
                 English
+              </label>
+            </div>
+            </td>
+          </tr>
+          </table>
+      
+            <table class="table table-hover">
+        <thead>
+            <tr>
+            <td>Type
+            </td>
+            </tr>
+            </thead>
+            <tr>
+            <td>
+                <div class="radio">
+              <label>
+                <input type="checkbox" id="optionsRadios3" >
+                Fantasy
+              </label>
+            </div>
+            </td>
+            </tr>
+            <tr>
+            <td>
+                <div class="radio">
+              <label>
+                <input type="checkbox" id="optionsRadios4" >
+                Horror
               </label>
             </div>
             </td>
@@ -156,7 +185,17 @@
         </div>
         
         
-  <div class="col-md-7">
+    
+    
+        </div>
+    </div>
+  <div id="page-content-wrapper">
+      <a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><span class="glyphicon glyphicon-th-list"></span></a>
+            <div class="container-fluid">
+                                <div class="row">
+                                        
+                    <div class="col-lg-12">
+
       <table class="table table-hover">
         <thead>
             <tr>
@@ -231,14 +270,12 @@
             </td>
         </tr>
 </table>
-        </div>
-        <div class="col-md-1"></div>
-</div>
+                                    </div>
+                </div>
+      </div>
+    </div>
     
-    
-    
-    
-    
+    </div>
     
         <!-- jQuery -->
     <script src="js/jquery.js"></script>
@@ -254,7 +291,12 @@
     <!-- Custom Theme JavaScript -->
     <script src="js/creative.js"></script>
 
-
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
 </body>
 
 </html>
